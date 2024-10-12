@@ -1,0 +1,104 @@
+<div>
+    <div  class="TD">
+        <div id="TDS">Transaction Dashboard</div>
+     </div>
+     <button class="searchbutton">Search Transaction </button>
+     <button class="formbutton">
+     <label  for="month-select"></label>
+        Select Month:
+          <select select id="month-select" style=" background-color: lightsalmon; border-color: black; "  [(ngModel)]="selectedMonth">
+              <option  value="">All</option>
+              <option value="Jan">Jan</option>
+              <option value="Feb">Feb</option>
+              <option value="Mar">Mar</option>
+              <option value="Apr">Apr</option>      
+              <option value="May">May</option>
+              <option value="Jun">Jun</option>
+              <option value="Jul">Jul</option>
+              <option value="Aug">Aug</option>  
+              <option value="Sep">Sep</option>
+              <option value="Oct">Oct</option>
+              <option value="Nov">Nov</option>
+              <option value="Dec">Dec</option>
+            </select>
+    </button>
+      <table class="Table">
+        <thead>
+          <tr>
+            <th class="th">ID</th>
+            <th class="th">Title</th>
+            <th >Price</th>
+            <th class="th">Description</th>
+            <th class="th">Category</th>
+            <th class="th">Image</th>
+            <th class="th">sold</th>
+            <th class="th">DateOfSale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of filteredTransactions">
+            <td>{{ transaction.id }}</td>
+            <td class="td">{{ transaction.title }}</td>
+            <td style="padding-left: 50px;">{{ transaction.price }}</td>
+            <td>{{ transaction.description }}</td>
+            <td style="padding-left: 30px;">{{ transaction.category }}</td>
+            <td><img class="imagedata" [src]="transaction.image" alt="Transaction Image" /></td>
+            <td>{{ transaction.sold }}</td>
+            <td>{{ transaction.dateOfSale }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <div style="float: left;">
+          Page {{ currentPage }} of {{ totalPages }}
+        </div>
+        <div style="text-align: center;">
+          <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+          <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+        </div>
+        <div style="float: right;">
+          Total Items: {{ filteredTransactions.length }}
+        </div>
+      </div>
+
+      <div style="background-color: antiquewhite; border-radius: 30px; margin-top: 50px;" *ngIf="monthStatistics">
+        <h3 style="padding-left: 40px; padding-top: 30px;" >Statistics for {{ monthStatistics.month }}</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="padding-left: 40px;">Total Sales</th>
+              <th style="padding-left: 40px;">Total Sold Items</th>
+              <th style="padding-left: 40px;">Total Unsold Items</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding-left: 40px;" >{{ monthStatistics.totalSales | currency }}</td>
+              <td style="padding-left: 40px;">{{ monthStatistics.totalSold }}</td>
+              <td style="padding-left: 40px;">{{ monthStatistics.totalUnsold }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Show a message if no data is available -->
+      <div *ngIf="!monthStatistics && selectedMonth">
+        <p>No transactions available for {{ selectedMonth }}.</p>
+      </div>
+
+      <!-- Bar Chart for Price Range -->
+<div >
+  <h3 class="chartdata">Price Range Distribution</h3>
+  <canvas id="barChart"></canvas>
+</div>
+
+<!-- Pie Chart for Category Distribution -->
+<div>
+  <h3 class="chartdata">Category Distribution</h3>
+  <canvas id="pieChart"></canvas>
+</div>
+
+<div>
+  <h3 style=" text-align: center;"> Created By Sanket Yerwadkar ❤</h3>
+</div>
