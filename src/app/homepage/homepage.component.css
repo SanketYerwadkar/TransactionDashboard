@@ -3,18 +3,19 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    margin-left: 500px;
-    margin-top: 30px;
+    margin: auto;
+    
     
     
 }
 #TDS{ 
     padding-top: 90px;
     font-weight: bold;
-    padding-left: 20px;
+    text-align: center;
+    margin: auto;
 }
 .searchbutton{
-    margin-left: 130px; 
+    margin-left: 190px; 
     font-weight: bold;
     background-color: lightsalmon;
     border-radius: 20px;

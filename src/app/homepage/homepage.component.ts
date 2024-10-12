@@ -775,7 +775,7 @@ get filteredData() {
     return priceRanges;
   }
 
-  // Pie chart data for unique categories
+  
   getCategoryDistribution() {
     const categoryCounts: { [key: string]: number } = {};
 
@@ -818,7 +818,7 @@ get filteredData() {
     });
   }
 
-  // Initialize Pie Chart
+  
   createPieChart() {
     const categoryData = this.getCategoryDistribution();
     const pieCanvas = document.getElementById('pieChart') as HTMLCanvasElement;
