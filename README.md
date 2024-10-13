@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 # TransactionDashboard
 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
 
 ## Development server
@@ -55,3 +56,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 >>>>>>> 49de57e (first commit)
+![1728472386862](https://github.com/user-attachments/assets/0cd291c3-04aa-44f6-8f32-4ecea46e0769)
