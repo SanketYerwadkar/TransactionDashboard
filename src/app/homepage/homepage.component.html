@@ -82,18 +82,18 @@
         </table>
       </div>
       
-      <!-- Show a message if no data is available -->
+     
       <div *ngIf="!monthStatistics && selectedMonth">
         <p>No transactions available for {{ selectedMonth }}.</p>
       </div>
 
-      <!-- Bar Chart for Price Range -->
+ 
 <div >
   <h3 class="chartdata">Price Range Distribution</h3>
   <canvas id="barChart"></canvas>
 </div>
 
-<!-- Pie Chart for Category Distribution -->
+
 <div>
   <h3 class="chartdata">Category Distribution</h3>
   <canvas id="pieChart"></canvas>
